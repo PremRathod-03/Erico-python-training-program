@@ -1,0 +1,11 @@
+ Emp ID,Full Name ,Department,Salary,Joining Date,E-mail
+101,  asha rao,engineering,55000,2021-03-15,asha@corp.com
+102,RAVI KUMAR,Engineering ,62000,2020/07/01,ravi@corp.com
+103,neha s,HR,,2019-11-20,neha@corp.com
+104,Kiran M,hr,48000,,KIRAN@CORP.COM
+101,  asha rao,engineering,55000,2021-03-15,asha@corp.com
+105,Prem R,Data Science,70000,2022-01-10,
+106,,Sales,"45,000",2023-05-05,sam@corp.com
+107,meera j,sales,-1,2023-08-12,meera@corp.com
+102,RAVI KUMAR,Engineering ,62000,2020/07/01,ravi@corp.com
+108,arjun p,Data Science,68000,2022-09-30,arjun@corp.com
