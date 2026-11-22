@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form class="add-form" method="POST" action="{{ url_for('add') }}">
+  <input type="text" name="title" placeholder="What needs to be done?" maxlength="120" required autofocus>
+  <select name="priority">
+    {% for p in priorities %}
+      <option value="{{ p }}" {% if p == 'medium' %}selected{% endif %}>{{ p | capitalize }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Add</button>
+</form>
+
+<nav class="filters">
+  {% for option in ['all', 'active', 'done'] %}
+    <a href="{{ url_for('index', show=option) }}" class="{{ 'active' if show == option }}">{{ option | capitalize }}</a>
+  {% endfor %}
+  <span class="stats">{{ stats.done }}/{{ stats.total }} completed</span>
+</nav>
+
+<ul class="tasks">
+  {% for task in tasks %}
+    <li class="task {{ 'done' if task.done }}">
+      <form method="POST" action="{{ url_for('toggle', task_id=task.id) }}">
+        <button class="check" title="Toggle done">{{ '✔' if task.done else '' }}</button>
+      </form>
+      <div class="body">
+        <span class="title">{{ task.title }}</span>
+        <span class="meta"><span class="badge {{ task.priority }}">{{ task.priority }}</span> added {{ task.created }}</span>
+      </div>
+      <form method="POST" action="{{ url_for('delete', task_id=task.id) }}">
+        <button class="delete" title="Delete task">✕</button>
+      </form>
+    </li>
+  {% else %}
+    <li class="empty">No tasks here yet.</li>
+  {% endfor %}
+</ul>
+
+{% if stats.done %}
+<form method="POST" action="{{ url_for('clear_completed') }}">
+  <button class="clear">Clear completed</button>
+</form>
+{% endif %}
+{% endblock %}
