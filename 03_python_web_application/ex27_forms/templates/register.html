@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 40px; }
+    form { display: grid; gap: 10px; max-width: 280px; }
+    .error { color: #b91c1c; }
+    .success { color: #15803d; }
+  </style>
+</head>
+<body>
+  <h1>Register</h1>
+
+  {% if success %}
+    <p class="success">Registration received for <strong>{{ username }}</strong>!</p>
+  {% endif %}
+  {% for error in errors or [] %}
+    <p class="error">{{ error }}</p>
+  {% endfor %}
+
+  <form method="POST" action="/register">
+    <label>Username <input type="text" name="username" value="{{ username or '' }}" required></label>
+    <label>Password <input type="password" name="password" required minlength="6"></label>
+    <button type="submit">Register</button>
+  </form>
+</body>
+</html>
