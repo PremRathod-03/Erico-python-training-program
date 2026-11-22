@@ -1,0 +1,7 @@
+Project kickoff notes - Python Training
+Meeting held on 2026-01-15 with the core team.
+Contact the lead at prem.rathod@example.com or the mentor at mentor_01@bmsce.ac.in for queries.
+Invalid addresses like john@@mail, @nouser.com and plain-text "user at domain" must be ignored.
+Next review is scheduled for 2026-02-01 and the final demo on 2026-03-20.
+Support: help-desk+python@training.org | Café ☕ meetups every Friday – bring ideas! 🚀
+Reference link: https://example.com/search?q=python encoding&lang=en
